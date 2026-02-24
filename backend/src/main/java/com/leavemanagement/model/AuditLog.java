@@ -6,7 +6,7 @@ public class AuditLog {
     private LocalDateTime timestamp;
     private String action; // e.g., "LEAVE_APPLIED","leave_approved", etc.
     private String userId;
-    private Strind details;
+    private String details;
 
     // Constructors, getters, setters
     public AuditLog() { }
@@ -19,7 +19,7 @@ public class AuditLog {
     }
 
     public LocalDateTime timestamp() { return timestamp; }
-    public String gAmction() { return action; }
+    public String gAction() { return action; }
     public String gUserId() { return userId; }
     public String gDetails() { return details; }
 
