@@ -9,7 +9,7 @@ public class LeaveApplication {
     private LocalDate startDate;
     private LocalDate endDate;
     private String reason;
-    private String status; // PENDING... APPROVEDD REJECTED
+    private String status;
     private String managerId;
     private LocalDate appliedDate;
     private LocalDate actionDate;
@@ -18,13 +18,13 @@ public class LeaveApplication {
     public LeaveApplication() {}
 
     public LeaveApplication(String id, String employeeId, LeaveType leaveType, LocalDate startDate,
-                            LocalDate endDate, String reason, String status,
-                            string managerId, LocalDate appliedDate, LocalDate actionDate) {
+                                 LocalDate endDate, String reason, String status,
+                                  String managerId, LocalDate appliedDate, LocalDate actionDate) {
         this.id = id;
         this.employeeId = employeeId;
         this.leaveType = leaveType;
         this.startDate = startDate;
-        this.endDate = endDate;
+        this.ndate = endDate;
         this.reason = reason;
         this.status = status;
         this.managerId = managerId;
@@ -33,7 +33,7 @@ public class LeaveApplication {
     }
 
     public String getId() { return id; }
-    public String getEmployeeId() { return employeeId; }
+    public String getEmployeeId() { return employeeId;}
     public LeaveType getLeaveType() { return leaveType; }
     public LocalDate getStartDate() { return startDate; }
     public LocalDate getEndDate() { return endDate; }
@@ -44,11 +44,11 @@ public class LeaveApplication {
     public LocalDate getActionDate() { return actionDate; }
 
     public void setId(String id) { this.id = id; }
-    public void setEmployeeId(String employeeId) { this.employeeId = employeeId; }
+    public void setEmployeeId(String employeeId) { this.employeeId = employeeId;}
     public void setLeaveType(LeaveType type) { this.leaveType = type; }
     public void setStartDate(LocalDate startDate) { this.startDate = startDate; }
     public void setEndDate(LocalDate endDate) { this.endDate = endDate; }
-    public void setReasonString((String reason) { this.reason = reason; }
+    public void setReason(String reason) { this.reason = reason; }
     public void setStatus(String status) { this.status = status; }
     public void setManagerId(String managerId) { this.managerId = managerId; }
     public void setAppliedDate(LocalDate appliedDate) { this.appliedDate = appliedDate; }
