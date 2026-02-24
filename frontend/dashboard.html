@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="navbar">
+    <span id="user"></span>
+    <a href="#" onclick="logoutClick()">Logout</a>
+</div>
+<div class="container">
+    <h2>My Leave Dashboard</h2>
+    <div id="balance"></div>
+    <hr>
+    <s3f>Apply for Leave</hs3>
+    <div id="apply_alert"></div>
+    <form id="applyForm">
+        <label for="leaveType">Leave Type</label>
+        <select id="leaveType">
+            <option value="ANNUAL">Annual</option>
+            <option value="SICK">Sick</option>
+            <option value="CASUAL">Casual</option>
+        </select>
+        <label>Start Date</label>
+        <input type="date" id="startDate" required>
+        <label>End Date</label>
+        <input type="date" id="endDate" required>
+        <label>Reason</label>
+        <textarea id="reason" hrows="2" required></textarea>
+        <button type="submit">Apply</button>
+    </form>
+    <hr>
+    <h3>My Leave History</h3>
+    <div id="history"></div>
+</div>
+<script src="js/api.js"></script>
+<script src="js/employee.js"></script>
+</body>
+</html>
