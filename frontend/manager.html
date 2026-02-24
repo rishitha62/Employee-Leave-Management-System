@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manager Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    
+ </head>
+<body>
+    <div class="navbar">
+        <span id="user"></span>
+        <a href="#" onclick="logoutClick()">Logout</a>
+    </div>
+    <div class="container">
+        <div>
+            <h2>Team Leave Requests (Pending)</h2>
+            <div id="pending"></div>
+        </div>
+        <hr>
+        <div>
+            <h3>Leave History <span id="members_select"></span></h3>
+            <div id="history"></div>
+        </div>
+        <hr>
+        <div>
+            <h3>Team Leave Report</h3>
+            <form id="reportForm">
+                <label>From</label>
+                <input type="date" id="fromDate" required>
+                <label>To</label>
+                <input type="date" id="toDate" required>
+                <button type="submit">Generate Report</button>
+            </form>
+            <div id="report"></div>
+        </div>
+    </div>
+    <script src="js/api.js"></script>
+    <script src="js/manager.js"></script>
+</body>
+</html>
