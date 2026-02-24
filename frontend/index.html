@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Leave Management - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h2>Please Sign In</h2>
+    <div id="alert"></div>
+    <form id="loginForm">
+        <label>Username</label>
+        <input type="text" id="username" required />
+        <label>Password</label>
+        <input type="password" id="password" required />
+        <button type="submit">Login</button>
+    </form>
+</div>
+<script src="js/api.js"></script>
+<script>
+document.getElementById('loginForm').onsubmit = function(e) {
+    e.preventDefault();
+    document.getElementById('alert').innerHTML = '';
+    fetch('/api/auth/login', {
+      method: "POST",
+      headers: {'Content-Type': 'application/json'},
+      credentials: 'include',
+      body: JSON.stringify({
+          username: document.getElementById("username").value,
+          password: document.getElementById('password').value
+      })
+    }).then(user => {
+        if (user && user.role) {
+            if (user.role === "EMPLOYEE")
+                window.location = "dashboard.html";
+            else if (user.role === "MANAGER")
+                window.location = "manager.html";
+        } else if(user && user.message) {
+            document.getElementById('alert').innerHTML =
+                <div class="alert">${user.message}</div>;
+        }
+    });
+};
+</script>
+</body>
+</html>
